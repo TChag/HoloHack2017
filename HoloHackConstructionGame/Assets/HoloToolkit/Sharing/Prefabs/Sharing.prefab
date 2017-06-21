@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ClientRole: 0
-  ServerAddress: localhost
+  ServerAddress: 192.168.1.2
   ServerPort: 20602
   connectOnAwake: 1
   AutoDiscoverServer: 0
