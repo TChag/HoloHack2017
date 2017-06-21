@@ -196,6 +196,9 @@ namespace HoloToolkit.Sharing.Spawning
             return Spawn(dataModel, localPosition, localRotation, null, parent, baseName, isOwnedLocally);
         }
 
+
+
+
         protected override void SetDataModelSource()
         {
             SyncSource = NetworkManager.Root.InstantiatedPrefabs;

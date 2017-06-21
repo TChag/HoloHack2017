@@ -21,24 +21,73 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
         InputManager.Instance.PushFallbackInputHandler(gameObject); // 
 
     }
+
     public void OnInputClicked(InputClickedEventData eventData)
     {
         if (SharingStage.Instance.IsConnected)
         {
-            var newCubePosition =
-        this.gameObject.transform.InverseTransformPoint(
-          (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
-            this.spawnManager.Spawn(
-        new SyncSpawnedObject(),
-        newCubePosition,
-        Random.rotation,
-        this.gameObject,
-        "MyCube",
-        false);
+            int rnd = Random.Range(0, 3);
+            if (rnd == 0)
+            {
+                SpawnCity();
+            }
+            if (rnd == 1)
+            {
+                SpawnTree();
+            }
+            if(rnd == 2)
+            {
+                SpawnRoad();
+            }
         }
     }
+
+    private void SpawnCity()
+    {
+        var newCubePosition = this.gameObject.transform.InverseTransformPoint(
+(GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
+        this.spawnManager.Spawn(
+         new SyncSpawnedObject(),
+         newCubePosition,
+         Quaternion.identity,
+         this.gameObject,
+         "My Obj",
+         false);
+    }
+
+    private void SpawnTree()
+    {
+        var newCubePosition = this.gameObject.transform.InverseTransformPoint(
+         (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
+        this.spawnManager.Spawn(
+         new SyncBaseTree(),
+         newCubePosition,
+         Quaternion.identity,
+         this.gameObject,
+         "My Obj",
+         false);
+    }
+
+    private void SpawnRoad()
+    {
+        var newCubePosition = this.gameObject.transform.InverseTransformPoint(
+         (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
+        this.spawnManager.Spawn(
+         new SyncBaseRoad(),
+         newCubePosition,
+         Quaternion.identity,
+         this.gameObject,
+         "My Obj",
+         false);
+    }
+
+
+
+
+
+
 }
 
-    
+
 
 

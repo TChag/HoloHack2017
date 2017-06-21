@@ -51,5 +51,19 @@ namespace HoloToolkit.Sharing.Spawning
 
             ObjectPath.Value += Name.Value;
         }
+
+    }
+
+    [SyncDataClass]
+    public class SyncBaseTree : SyncSpawnedObject
+    {
+
+    }
+
+    [SyncDataClass]
+    public class SyncBaseRoad : SyncSpawnedObject
+        
+    {
+
     }
 }
