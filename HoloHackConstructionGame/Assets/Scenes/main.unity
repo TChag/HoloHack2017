@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnablePrefabs:
   - DataModelClassName: SyncSpawnedObject
-    Prefab: {fileID: 1000011931115288, guid: 59101abe6f9a51149a4c07b3ea154698, type: 2}
+    Prefab: {fileID: 1925487995907706, guid: 7f7abc7aedf69e94b841f186f116c181, type: 2}
 --- !u!1001 &727103177
 Prefab:
   m_ObjectHideFlags: 0
@@ -597,6 +597,8 @@ GameObject:
   - component: {fileID: 1821095234}
   - component: {fileID: 1821095235}
   - component: {fileID: 1821095236}
+  - component: {fileID: 1821095238}
+  - component: {fileID: 1821095237}
   m_Layer: 0
   m_Name: SynchronizedParent
   m_TagString: Untagged
@@ -643,3 +645,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 11170378}
+--- !u!114 &1821095237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1821095233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a63ef1b98adec49bdb80fe1f187893, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1821095238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1821095233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d681d9f273ecb84285cb0fd9548d5bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
