@@ -1,0 +1,24 @@
+Low poly trees collection 
+
+Low poly trees assets pack, ready for games. This models pack has everything you need to create a stylized forest. 
+
+20 different high quality models, optimized and unwrapped geometry. 
+
+Renders from 3ds max. 
+
+- 16 Various trees. Total polycount - 3652. Average - 230 triangles. 
+- 3 mushrooms and one grass model - total 187 triangles. 
+
+- Created in 3ds max 
+- Included *.fbx; *.obj; *.max formats 
+- All objects unwrapped ant textured. 
+- 1 Diffuse texture with 4 color variations and 3 sizes - 4k, 2k and 1k. 
+- Png and Targa textures. 
+- Psd texture file included. 
+- Pdf catalog included. 
+
+Textures created for big forest pack which contains 78 assets. Trees unwrap taking only part of textures.
+
+Have Questions? 
+Contact me via email: info@saintpix.com 
+Follow me in linkedin: Saintpix
