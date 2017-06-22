@@ -42,7 +42,7 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
         }
     }
 
-    private void SpawnCity()
+    public void SpawnCity()
     {
         var newCubePosition = this.gameObject.transform.InverseTransformPoint(
 (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
@@ -55,7 +55,7 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
          false);
     }
 
-    private void SpawnTree()
+    public void SpawnTree()
     {
         var newCubePosition = this.gameObject.transform.InverseTransformPoint(
          (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
@@ -68,7 +68,7 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
          false);
     }
 
-    private void SpawnRoad()
+    public void SpawnRoad()
     {
         var newCubePosition = this.gameObject.transform.InverseTransformPoint(
          (GazeManager.Instance.GazeOrigin + GazeManager.Instance.GazeNormal * 2.0f));
@@ -80,12 +80,6 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
          "My Obj",
          false);
     }
-
-
-
-
-
-
 }
 
 
