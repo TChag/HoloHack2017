@@ -2,33 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using HoloToolkit.Unity.InputModule;
 
 public class SnappingManager : MonoBehaviour {
 
-    private bool onGrid;
-    private Transform grid;
-    private float gridSize = 0.1f;
+    public bool onGrid;
+    private CubeDragger cubeDragger;
 
-	// Use this for initialization
-	void Start () {
-        grid = GameObject.FindWithTag("Grid").transform;
+    private AudioSource audioSource;
+    public AudioClip a_spawn;
+    public AudioClip a_placed;
 
-        grid.position = new Vector3(
-            Snap(grid.position.x),
-            Snap(grid.position.y),
-            Snap(grid.position.z));
+    private void OnEnable()
+    {
+        audioSource = GetComponent<AudioSource>();
+        cubeDragger = GetComponent<CubeDragger>();
+        PlaySpawnAudio();
     }
-	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
+        //if (onGrid && cubeDragger.isDragging)
+        //{
+        //    transform.position = new Vector3(
+        //        Snap(transform.position.x),
+        //        GridInitialization.Grid.position.y,
+        //        Snap(transform.position.z));
+        //}
+        
+	}
+
+    public void SnapToGrid()
+    {
+        transform.position = new Vector3(
+                Snap(transform.position.x),
+                GridInitialization.Grid.position.y,
+                Snap(transform.position.z));
+        Debug.Log(onGrid);
         if (onGrid)
         {
-            this.transform.position = new Vector3(Snap(transform.position.x), grid.transform.position.y, Snap(transform.position.z));
+            Debug.Log("activating animation");
+            GetComponentInChildren<AnimationPlayer>().PlayAnimation();
+            audioSource.PlayOneShot(a_placed);
         }
-	}
+    }
+
+    public void PlaySpawnAudio()
+    {
+        audioSource.PlayOneShot(a_spawn);
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
+  
         if (other.tag == "Grid")
         {
             onGrid = true;
@@ -37,9 +63,19 @@ public class SnappingManager : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+  
         if (other.tag == "Grid")
         {
             onGrid = false;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+
+        if (other.tag == "Grid")
+        {
+            onGrid = true;
         }
     }
 

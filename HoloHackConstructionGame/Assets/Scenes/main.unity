@@ -137,9 +137,9 @@ MonoBehaviour:
   - DataModelClassName: SyncSpawnedObject
     Prefab: {fileID: 1207170118897254, guid: 6cf723b7f2db55c4eb61c9b305710970, type: 2}
   - DataModelClassName: SyncBaseTree
-    Prefab: {fileID: 1986218679618388, guid: 0f466bd4136953e45804193a4cb88563, type: 2}
+    Prefab: {fileID: 1264710952439438, guid: fd11f569fe4b3e1448cdc79efb95b156, type: 2}
   - DataModelClassName: SyncBaseRoad
-    Prefab: {fileID: 1162628630166782, guid: c94b9d26db66e6d4fbea0b86cc0f7ea1, type: 2}
+    Prefab: {fileID: 1468148764496026, guid: 641b2d8264f901a42b0da88aa860dd02, type: 2}
   - DataModelClassName: SyncBaseGrid
     Prefab: {fileID: 1992572317322466, guid: 6538d7bcf7180ff42bfa038abd73e88f, type: 2}
 --- !u!1 &37726659
@@ -220,7 +220,7 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
         PublicKeyToken=null
-  - Keyword: Create City
+  - Keyword: Create Tree
     KeyCode: 0
     Response:
       m_PersistentCalls:
@@ -245,6 +245,42 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1821095236}
           m_MethodName: CreateGrid
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - Keyword: Scale Up
+    KeyCode: 111
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1821095236}
+          m_MethodName: ScaleCityUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+        PublicKeyToken=null
+  - Keyword: Scale Down
+    KeyCode: 105
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1821095236}
+          m_MethodName: ScaleCityDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -566,6 +602,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011154029958, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
+        type: 2}
+      propertyPath: drawVisualMeshes
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 2}
   m_IsPrefabParent: 0
@@ -775,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 11170378}
+  cityBase: {fileID: 0}
 --- !u!114 &1821095237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -797,5 +839,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d681d9f273ecb84285cb0fd9548d5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customHeadPrefab: {fileID: 1081843853525866, guid: c710bfa17f083a846b5ce99f56de97f0,
+  customHeadPrefab: {fileID: 1819206260105934, guid: 6eb55835d28b4db4ba7ba915c759e4fc,
     type: 2}

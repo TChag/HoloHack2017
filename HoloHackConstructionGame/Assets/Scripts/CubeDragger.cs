@@ -53,7 +53,7 @@ namespace HoloToolkit.Unity.InputModule
         public bool IsDraggingEnabled = true;
 
         private Camera mainCamera;
-        private bool isDragging;
+        public bool isDragging;
         private bool isGazed;
         private Vector3 objRefForward;
         private Vector3 objRefUp;
@@ -91,7 +91,7 @@ namespace HoloToolkit.Unity.InputModule
             }
         }
 
-        private void Update()
+        private void LateUpdate()
         {
             if (IsDraggingEnabled && isDragging)
             {
@@ -287,6 +287,10 @@ namespace HoloToolkit.Unity.InputModule
                 eventData.SourceId == currentInputSourceId)
             {
                 StopDragging();
+                if (Mathf.Abs(GameObject.FindWithTag("Grid").transform.position.y - transform.position.y)< 0.2f)
+                {
+                    GetComponent<SnappingManager>().SnapToGrid();
+                }
             }
         }
 
