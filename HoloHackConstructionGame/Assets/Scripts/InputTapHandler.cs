@@ -40,6 +40,8 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
                 SpawnRoad();
             }
         }
+
+        GameObject.FindWithTag("AnchorText").GetComponent<Renderer>().enabled = false;
     }
 
     public void SpawnCity()
@@ -79,6 +81,21 @@ public class InputTapHandler : Singleton<InputTapHandler>, IInputClickHandler
          this.gameObject,
          "My Obj",
          false);
+    }
+
+    public void CreateGrid()
+    {
+        var newCubePosition = this.gameObject.transform.InverseTransformPoint(
+ (GazeManager.Instance.GazeOrigin +Vector3.down*0.2f+ GazeManager.Instance.GazeNormal * 2.0f));
+        this.spawnManager.Spawn(
+         new SyncBaseGrid(),
+         newCubePosition,
+         Quaternion.identity,
+         this.gameObject,
+         "My Obj",
+         false);
+        //Deactivate the grid text mesh renderer
+        GameObject.FindWithTag("AnchorText").GetComponent<Renderer>().enabled = false;
     }
 }
 

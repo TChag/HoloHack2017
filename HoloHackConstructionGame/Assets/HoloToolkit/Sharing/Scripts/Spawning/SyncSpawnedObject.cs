@@ -66,4 +66,10 @@ namespace HoloToolkit.Sharing.Spawning
     {
 
     }
+    [SyncDataClass]
+    public class SyncBaseGrid : SyncSpawnedObject
+
+    {
+
+    }
 }
